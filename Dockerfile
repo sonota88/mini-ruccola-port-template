@@ -7,7 +7,6 @@ RUN apt update
 RUN apt update \
   && apt install -y --no-install-recommends \
     ruby \
-    gforth \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
