@@ -358,7 +358,7 @@ container_main() {
 
   build
 
-  cmd="$1"; shift
+  local cmd="$1"; shift
   case $cmd in
     utils | u*)     #task: Run utils tests
       test_utils "$@"
