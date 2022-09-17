@@ -14,15 +14,15 @@ readonly TEST_DIR="${PROJECT_DIR}/test"
 readonly TEST_COMMON_DIR="${PROJECT_DIR}/test_common"
 readonly TEMP_DIR="${PROJECT_DIR}/z_tmp"
 
-MAX_ID_UTILS=5
-MAX_ID_JSON=8
-MAX_ID_LEX=3
-MAX_ID_PARSE=2
-MAX_ID_COMPILE=27 # of 27
+readonly MAX_ID_UTILS=5
+readonly MAX_ID_JSON=8
+readonly MAX_ID_LEX=3
+readonly MAX_ID_PARSE=2
+readonly MAX_ID_COMPILE=27 # of 27
 
 ERRS=""
 
-RUNNER_CMD=gforth
+readonly RUNNER_CMD=gforth
 
 run_test_utils() {
   $RUNNER_CMD test/test_utils.sh
@@ -215,7 +215,7 @@ test_parse_nn() {
     return
   fi
 
-  ruby test_common/diff.rb json-fmt $exp_file $temp_vgt_file
+  ruby test_common/diff.rb json $exp_file $temp_vgt_file
   if [ $? -ne 0 ]; then
     # meld $exp_file $temp_vga_file &
 
