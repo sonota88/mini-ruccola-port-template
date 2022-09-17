@@ -360,37 +360,31 @@ container_main() {
 
   local cmd="$1"; shift
   case $cmd in
-    utils | u*)     #task: Run utils tests
+    utils | u* )     #task: Run utils tests
       test_utils "$@"
       postproc "utils"
-      ;;
 
-    json | j*)     #task: Run json tests
+  ;; json | j* )     #task: Run json tests
       test_json "$@"
       postproc "json"
-      ;;
 
-    lex | l*)      #task: Run lex tests
+  ;; lex | l* )      #task: Run lex tests
       test_lex "$@"
       postproc "lex"
-      ;;
 
-    parse | p*)    #task: Run parse tests
+  ;; parse | p* )    #task: Run parse tests
       test_parse "$@"
       postproc "parse"
-      ;;
 
-    compile | c*)  #task: Run compile tests
+  ;; compile | c* )  #task: Run compile tests
       test_compile "$@"
       postproc "compile"
-      ;;
 
-    all | a*)      #task: Run all tests
+  ;; all | a* )      #task: Run all tests
       test_all
       postproc "all"
-      ;;
 
-    *)
+  ;; * )
       echo "Tasks:"
       grep '#task: ' $0 | grep -v grep
       ;;
