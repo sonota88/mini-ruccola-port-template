@@ -354,11 +354,16 @@ test_all() {
 # --------------------------------
 
 container_main() {
-  setup
+  local cmd=
+  if [ $# -ge 1 ]; then
+    cmd="$1"; shift
+  else
+    cmd="show_tasks"
+  fi
 
+  setup
   build
 
-  local cmd="$1"; shift
   case $cmd in
     utils | u* )     #task: Run utils tests
       test_utils "$@"
