@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o nounset
+
 readonly IMAGE=vm2gol-v2-forth:1
 
 build() {
