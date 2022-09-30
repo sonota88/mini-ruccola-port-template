@@ -167,7 +167,7 @@ test_lex_nn() {
 
   run_lex $input_file > $temp_tokens_file
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_lex"
+    ERRS="${ERRS},lex_${nn}_lex"
     return
   fi
 
@@ -203,7 +203,7 @@ test_parse_nn() {
   echo "  lex" >&2
   run_lex $input_file > $temp_tokens_file
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_lex"
+    ERRS="${ERRS},parse_${nn}_lex"
     return
   fi
 
@@ -211,7 +211,7 @@ test_parse_nn() {
   run_parse $temp_tokens_file \
     > $temp_vgt_file
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_parse"
+    ERRS="${ERRS},parse_${nn}_parse"
     return
   fi
 
@@ -268,7 +268,7 @@ test_compile_nn() {
   run_lex ${TEST_COMMON_DIR}/compile/${nn}.vg.txt \
     > $temp_tokens_file
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_lex"
+    ERRS="${ERRS},compile_${nn}_lex"
     local_errs="${local_errs},${nn}_lex"
     return
   fi
@@ -277,7 +277,7 @@ test_compile_nn() {
   run_parse $temp_tokens_file \
     > $temp_vgt_file
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_parse"
+    ERRS="${ERRS},compile_${nn}_parse"
     local_errs="${local_errs},${nn}_parse"
     return
   fi
@@ -286,7 +286,7 @@ test_compile_nn() {
   run_codegen $temp_vgt_file \
     > $temp_vga_file
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_codegen"
+    ERRS="${ERRS},compile_${nn}_codegen"
     local_errs="${local_errs},${nn}_codegen"
     return
   fi
