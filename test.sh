@@ -325,28 +325,28 @@ test_all() {
   echo "==== json ===="
   test_json
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_json"
+    ERRS="${ERRS},all_json"
     return
   fi
 
   echo "==== lex ===="
   test_lex
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_lex"
+    ERRS="${ERRS},all_lex"
     return
   fi
 
   echo "==== parse ===="
   test_parse
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_parse"
+    ERRS="${ERRS},all_parse"
     return
   fi
 
   echo "==== compile ===="
   test_compile
   if [ $? -ne 0 ]; then
-    ERRS="${ERRS},${nn}_compile"
+    ERRS="${ERRS},all_compile"
     return
   fi
 }
