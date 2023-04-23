@@ -16,7 +16,7 @@ readonly TEMP_DIR="${PROJECT_DIR}/z_tmp"
 
 readonly MAX_ID_UTILS=5
 readonly MAX_ID_JSON=8
-readonly MAX_ID_LEX=3
+readonly MAX_ID_LEX=4
 readonly MAX_ID_PARSE=2
 readonly MAX_ID_COMPILE=27 # of 27
 
