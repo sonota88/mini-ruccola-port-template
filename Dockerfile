@@ -10,12 +10,13 @@ RUN apt-get update \
 
 ARG user
 ARG group
+ARG home=/home/${user}
 
 RUN groupadd ${user} \
   && useradd ${user} -g ${group} -m
 
 USER ${user}
 
-WORKDIR /home/${user}/work
+WORKDIR ${home}/work
 
 ENV IN_CONTAINER=1
