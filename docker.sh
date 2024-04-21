@@ -2,7 +2,7 @@
 
 set -o nounset
 
-readonly IMAGE=vm2gol-v2-forth:1
+readonly IMAGE=mini-ruccola-LANG:1
 
 cmd_build() {
   docker build \
