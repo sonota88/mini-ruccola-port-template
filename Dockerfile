@@ -17,6 +17,9 @@ RUN groupadd ${user} \
 
 USER ${user}
 
+# SHELL ["/bin/bash", "-l", "-c"]
+
 WORKDIR ${home}/work
 
 ENV IN_CONTAINER=1
+ENV LANG=en_US.UTF-8
