@@ -6,8 +6,8 @@ readonly IMAGE=vm2gol-v2-forth:1
 
 cmd_build() {
   docker build \
-    --build-arg USER=$USER \
-    --build-arg GROUP=$(id -gn) \
+    --build-arg user=$USER \
+    --build-arg group=$(id -gn) \
     -t $IMAGE .
 }
 

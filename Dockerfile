@@ -8,14 +8,14 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-ARG USER
-ARG GROUP
+ARG user
+ARG group
 
-RUN groupadd ${USER} \
-  && useradd ${USER} -g ${GROUP} -m
+RUN groupadd ${user} \
+  && useradd ${user} -g ${group} -m
 
-USER ${USER}
+USER ${user}
 
-WORKDIR /home/${USER}/work
+WORKDIR /home/${user}/work
 
 ENV IN_CONTAINER=1
