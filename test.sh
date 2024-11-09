@@ -171,7 +171,7 @@ test_lex_nn() {
     return
   fi
 
-  ruby test_common/diff.rb text $exp_file $temp_tokens_file
+  ruby ${TEST_COMMON_DIR}/diff.rb text $exp_file $temp_tokens_file
   if [ $? -ne 0 ]; then
     # meld $exp_file $temp_tokens_file &
 
@@ -215,7 +215,7 @@ test_parse_nn() {
     return
   fi
 
-  ruby test_common/diff.rb json $exp_file $temp_vgt_file
+  ruby ${TEST_COMMON_DIR}/diff.rb json $exp_file $temp_vgt_file
   if [ $? -ne 0 ]; then
     # meld $exp_file $temp_vga_file &
 
@@ -292,7 +292,7 @@ test_compile_nn() {
   fi
 
   if [ "$local_errs" = "" ]; then
-    ruby test_common/diff.rb asm $exp_file $temp_vga_file
+    ruby ${TEST_COMMON_DIR}/diff.rb asm $exp_file $temp_vga_file
     if [ $? -ne 0 ]; then
       # meld $exp_file $temp_vga_file &
 
