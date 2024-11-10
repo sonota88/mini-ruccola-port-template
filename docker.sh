@@ -8,6 +8,7 @@ cmd_build() {
   docker build \
     --build-arg user=$USER \
     --build-arg group=$(id -gn) \
+    --progress plain \
     -t $IMAGE .
 }
 
