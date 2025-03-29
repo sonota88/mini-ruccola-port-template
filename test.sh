@@ -60,6 +60,13 @@ setup() {
 
 build() {
   :
+
+  # rake build
+  # local status=$?
+  # if [ $status -ne 0 ]; then
+  #   echo "build failed" >&2
+  #   exit $status
+  # fi
 }
 
 postproc() {
